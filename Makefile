@@ -20,3 +20,9 @@ $(PROJECT): $(OBJ)
 
 clean:
 	rm -f $(SRC)/*.o *~ core $(PROJECT)
+
+install: $(PROJECT)
+	install -Dm 755 $(PROJECT) $(DESTDIR)/$(SBINDIR)/$(PROJECT)
+
+uninstall:
+	rm -f $(DESTDIR)/$(SBINDIR)/$(PROJECT)
